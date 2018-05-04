@@ -28,4 +28,12 @@ module.exports = function() {
      	client.waitForVisible('#react-select-2--option-0', TIMEOUT); 
      	client.click('#react-select-2--option-0'); //Afganistan
    });
+    
+    this.Given(/^I accepted all terms$/, function () {
+         // Write code here that turns the phrase above into concrete actions
+         client.waitForVisible('label[for=areTermsAccepted]', TIMEOUT);
+         client.click('label[for=areTermsAccepted]')
+       });
+
+
 }
