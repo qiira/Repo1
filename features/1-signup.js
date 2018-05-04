@@ -27,13 +27,30 @@ module.exports = function() {
      	client.click('.Select-control');
      	client.waitForVisible('#react-select-2--option-0', TIMEOUT); 
      	client.click('#react-select-2--option-0'); //Afganistan
-   });
+    });
     
     this.Given(/^I accepted all terms$/, function () {
-         // Write code here that turns the phrase above into concrete actions
-         client.waitForVisible('label[for=areTermsAccepted]', TIMEOUT);
-         client.click('label[for=areTermsAccepted]')
-       });
+        client.waitForVisible('label[for=areTermsAccepted]', TIMEOUT);
+        client.click('label[for=areTermsAccepted]')
+        client.waitForVisible('label[for=isCountryDeclarationAccepted]', TIMEOUT);
+        client.click('label[for=isCountryDeclarationAccepted]')
+    });
 
+    this.Given(/^I clicked on recaptcha$/, function () {
+        client.waitForVisible('.g-recaptcha', TIMEOUT);
+        client.click('.g-recaptcha');         
+    });
+
+    this.Then(/^the button "([^"]*)" should be active$/, function (arg1) {
+        return 'pending';
+    });
+
+    this.When(/^I click on "([^"]*)"$/, function (arg1) {
+        return 'pending';
+    });
+
+    this.Then(/^I should be registered and redirected$/, function () {
+           return 'pending';
+    });
 
 }
