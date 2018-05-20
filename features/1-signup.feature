@@ -8,6 +8,6 @@ Feature: Signing up
 		And I have choosen a country
 		And I accepted all terms
 		And I clicked on recaptcha
-		Then the button "" should be active
-		When I click on " "
+		Then the button ".wemark-sign-up-button" should be active
+		When I click on ".wemark-sign-up-button"
 		Then I should be registered and redirected 

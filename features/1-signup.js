@@ -41,16 +41,25 @@ module.exports = function() {
         client.click('.g-recaptcha');         
     });
 
-    this.Then(/^the button "([^"]*)" should be active$/, function (arg1) {
-        return 'pending';
+    this.Then(/^the button "([^"]*)" should be active$/, function (buttonSelector) {
+        client.waitForVisible(buttonSelector, TIMEOUT);
+        client.waitForExist(`${buttonSelector}[disabled]`, TIMEOUT, true);
     });
 
-    this.When(/^I click on "([^"]*)"$/, function (arg1) {
-        return 'pending';
+    this.When(/^I click on "([^"]*)"$/, function (selector) {
+        client.waitForExist(selector, TIMEOUT);
+        client.waitForVisible(selector, TIMEOUT);
+        client.click(selector);
     });
 
     this.Then(/^I should be registered and redirected$/, function () {
-           return 'pending';
+           client.waitForExist('.password-form', TIMEOUT);
+           client.waitForVisible('.password-form', TIMEOUT);
+           const url = client.getUrl();
+           
+           if(url.indexOf('verification') <= 0) {
+                throw new Error('Didnt redirect to sign in page.');
+           }
     });
 
 }
