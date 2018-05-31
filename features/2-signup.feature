@@ -1,4 +1,3 @@
-@watch
 Feature: Signing up
 	Scenario: Properly signing up
 		Given I have visited "http://dev-kyc-frontend-server.eu-west-1.elasticbeanstalk.com/signup" page

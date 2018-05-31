@@ -1,4 +1,3 @@
-@watch
 Feature: Signing in with one time password
 	Scenario: Properly signing in
 		Given I have received the one time password

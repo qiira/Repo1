@@ -1,9 +1,9 @@
 module.exports = function() {
 	const TIMEOUT = 10000; //10 seconds
 
-	this.Given(/^I have visited "([^"]*)" page$/, function (url) {
-    	client.url(url);
-   	});
+	//this.Given(/^I have visited "([^"]*)" page$/, function (url) {
+    //	client.url(url);
+   	//});
 
 	this.Given(/^I have provided valid first name$/, function () {
 	 	client.waitForVisible('input#firstName', TIMEOUT);
