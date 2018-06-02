@@ -55,24 +55,24 @@
         assert.equal(browser.getText('.input-field:nth-of-type(4) .tipbox.has-error'),'Residents of this country are not allowed to participate in the token sale')
        });
 
-    this.Given(/^I accepted all the terms$/, function () {
+    this.Given(/^I accepted all terms$/, function () {
         client.waitForVisible('label[for=areTermsAccepted]', TIMEOUT);
         client.click('label[for=areTermsAccepted]')
         client.waitForVisible('label[for=isCountryDeclarationAccepted]', TIMEOUT);
         client.click('label[for=isCountryDeclarationAccepted]')
     });
 
-    this.Given(/^I clicked on the recaptcha$/, function () {
+    this.Given(/^I clicked on recaptcha$/, function () {
         client.waitForVisible('.g-recaptcha', TIMEOUT);
         client.click('.g-recaptcha');         
     });
 
-    this.Then(/^the button "([^"]*)" should be active.$/, function (buttonSelector) {
+    this.Then(/^the button "([^"]*)" should be active$/, function (buttonSelector) {
         client.waitForVisible(buttonSelector, TIMEOUT);
         client.waitForExist(`${buttonSelector}[disabled]`, TIMEOUT, true);
     });
 
-    this.When(/^I click on the "([^"]*)"$/, function (selector) {
+    this.When(/^I click on "([^"]*)"$/, function (selector) {
         client.waitForExist(selector, TIMEOUT);
         client.waitForVisible(selector, TIMEOUT);
         client.click(selector);

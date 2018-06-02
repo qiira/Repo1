@@ -10,8 +10,8 @@ Feature: Registration - negative testing
 		Then an error message display under the e-mail field
 		When I have chosen an invalid country
 		Then an error message display under the country field
-		When I accepted all the terms
-		And I clicked on the recaptcha
-		Then the button ".wemark-sign-up-button" should be active.
+		When I accepted all terms
+		And I clicked on recaptcha
+		Then the button ".wemark-sign-up-button" should be active
 		When I click on ".wemark-sign-up-button"
 		Then I should not be allowed to register
