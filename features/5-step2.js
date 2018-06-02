@@ -6,8 +6,9 @@ module.exports = function() {
     });
 
 	this.When(/^I upload my "([^"]*)" verification document$/, function (path) {
-	 	client.waitForVisible('.uploader-input', TIMEOUT);
-	 	client.element('.uploader-input').keys(path);
+	 	client.waitForVisible('.uploader-input-container .uploader-input .upload-button', TIMEOUT);
+	 	browser.chooseFile('input[type=file]', path);
+	 	browser.submitForm('input[type=file]');
 	});
 
 
