@@ -5,7 +5,7 @@ let imap_connection = null;
 imaps.connect(
 	{imap: {
   user: 'wemtest8@gmail.com',
-  password: '',
+  password: 'Wemark!@',
   host: 'imap.gmail.com',
   port: 993,
   tls: true

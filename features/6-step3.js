@@ -9,14 +9,7 @@ module.exports = function() {
 	 	client.waitForVisible('.Select-placeholder', TIMEOUT);
      	client.click('.Select-placeholder');
      	//const randNum =  Math.floor(Math.random() * (5 - 1)) + 1;
-     	//client.waitForVisible('[aria-activedescendant=react-select-9--option-3]', TIMEOUT); 
-     	//client.click('[aria-activedescendant=react-select-9--option-3]');
-     	client.waitForVisible('#react-select-9--value', TIMEOUT);
-     	client.selectByAttribute('#react-select-9--value','aria-activedescendant','react-select-9--option-3'); 
+     	client.waitForVisible('.Select-option', TIMEOUT); 
+     	client.click('.Select-option');
 	});
-
-    this.Then(/^I should have access to Step 4 of the Your paying wallet form$/, function () {
-            client.isVisible('#walletAddress');
-    });
-
 }

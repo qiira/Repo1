@@ -20,8 +20,8 @@ module.exports = function() {
 	 	client.setValue('input#zipCode', '00-2003');
     });
 
-    this.Then(/^I should have access to Step 2 of the Identity verification form$/, function () {
-            client.isVisible('.custom-option-icon');
+    this.Then(/^I should have access to Step "([^"]*)"$/, function (stepClass) {
+        client.waitForExist(`${stepClass}.extended`, TIMEOUT);
+        client.waitForVisible(`${stepClass}.extended`, TIMEOUT);
     });
-
 }

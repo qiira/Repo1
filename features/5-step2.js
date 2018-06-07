@@ -10,10 +10,4 @@ module.exports = function() {
 	 	browser.chooseFile('input[type=file]', path);
 	 	browser.submitForm('input[type=file]');
 	});
-
-
-    this.Then(/^I should have access to Step 3 of the Approximate contribution form$/, function () {
-            client.isVisible('label[for=estimation]');
-    });
-
 }

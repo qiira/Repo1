@@ -6,11 +6,13 @@ module.exports = function() {
     });
 
 	this.Given(/^I have provided a valid wallet address$/, function () {
-        client.setValue('input#walletAddress', '11111116111e111111d1111111111f1111451111'); 
+        client.waitForVisible('input#walletAddress', TIMEOUT); 
+        client.setValue('input#walletAddress', `${Math.round(Math.random()*10000000)}6111e111111d1111111111f1111451111`); 
 	});
 
     this.Then(/^I should have been successfully whitelisted$/, function () {
-            client.isVisible('.whitelisting-success-box');
+        client.waitForExist('.whitelisting-success-box', TIMEOUT);
+        client.waitForVisible('.whitelisting-success-box', TIMEOUT);
     });
 
 }
