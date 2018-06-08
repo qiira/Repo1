@@ -1,7 +1,7 @@
 @watch
 Feature: Registration - negative testing
-	Scenario: Improperly registration
-		Given I have visited "http://dev-kyc-frontend-server.eu-west-1.elasticbeanstalk.com/signup" page
+	Scenario: Invalid registration
+		Given I have visited "/signup" page
 		And I have provided invalid first name
 		Then an error message display under the first name field
 		When I have provided invalid last name

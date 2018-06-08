@@ -2,8 +2,8 @@
 	const TIMEOUT = 10000; //10 seconds
 	var assert = require('assert');
  
-	this.Given(/^I have visited "([^"]*)" page$/, function (url) {
-    	client.url(url);
+	this.Given(/^I have visited "([^"]*)" page$/, function (path) {
+    	client.url(`${process.env.APP_URL}${path}`);
    	});
 
 	this.Given(/^I have provided invalid first name$/, function () {
