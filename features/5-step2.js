@@ -6,8 +6,10 @@ module.exports = function() {
     });
 
 	this.When(/^I upload my "([^"]*)" verification document$/, function (path) {
+		const dir = process.env.DIR_TO_IMAGE || './';
+
 	 	client.waitForVisible('.uploader-input-container .uploader-input .upload-button', TIMEOUT);
-	 	browser.chooseFile('input[type=file]', path);
+	 	browser.chooseFile('input[type=file]', `${process.env.PWD}/${dir ? dir : ''}${path}`);
 	 	browser.submitForm('input[type=file]');
 	});
 }

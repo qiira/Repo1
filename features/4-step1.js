@@ -1,5 +1,5 @@
 module.exports = function() {
-	const TIMEOUT = 10000; //10 seconds
+	const TIMEOUT = 15000; //15 seconds
 
 	this.Given(/^I'm logged in$/, function () {
         client.isVisible('.header-user-email');
