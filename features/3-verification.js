@@ -46,7 +46,7 @@ module.exports = function() {
 		        	const wemarkEmail = bodies[0];
 
 		        	if(wemarkEmail) {
-		        		const passwordString = wemarkEmail.match(/password\:\s(\d{10})/);
+		        		const passwordString = wemarkEmail.match(/password\:\s(\w{16})/);
 
 		        		if(passwordString[1]) {
 		        			pass = passwordString[1];
